@@ -20,7 +20,15 @@ Ailly's best feature is rapidly itearting on prompt engineering. By keeping your
 
 ### Properties
 
-These properties can be set in a combination of places, includeing the command line, .aillyrc, and greymatter. Later settings override earlier.
+These properties can be set in a combination of places, including the command line, .aillyrc, and greymatter. Later settings override earlier.
+
+| Property | Options                    | Default      | Description                                                                |
+|----------|----------------------------|--------------|----------------------------------------------------------------------------|
+| combined | true &#124; false          | false        | If true, add to prompt file. If false, create a new file                   |
+| isolated | true &#124; false          | (no default) | If true, only use system prompt. If false, defer to [context strategy](#context-strategy).   |
+| skip     | true &#124; false          | (no default) | (Description needed)                                                       |
+| context  | conversation &#124; folder &#124; none | conversation | Specifies how to load context. See [context strategy](#context-strategy).           |
+
 
 - **`combined`** `boolean` If true, the file's body is the response and the prompt is in the greymatter key `prompt`. If false, the file's body is the prompt and the response is in `{file_name}.ailly.md`. Default false.
 - **`skip`** `boolean` If true, the prompt will not be sent through the LLM (but it will be part of the context).
